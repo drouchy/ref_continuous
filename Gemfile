@@ -11,7 +11,7 @@ gem 'sqlite3'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
@@ -23,9 +23,12 @@ gem 'sqlite3'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'cucumber-rails'
+  gem 'factory_girl_rails', '>=1.1.beta1'
+  gem 'capybara'
+  gem 'database_cleaner'
+end
+
+gem 'simplecov', '>= 0.4.0', :require => false, :group => :test
